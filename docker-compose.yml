@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db_mysql_blog:
+    image: mysql:8.0
+    container_name: blog_mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: blog_db
+      MYSQL_USER: blog_user
+      MYSQL_PASSWORD: blog_pass
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
