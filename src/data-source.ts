@@ -1,5 +1,8 @@
+// src/data-source.ts
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { User } from "./domain/User";
+import { Post } from "./domain/Post";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -10,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: "blog_db",
     synchronize: true,
     logging: false,
-    entities: [],
+    entities: [User, Post],
     migrations: [],
     subscribers: [],
 })
